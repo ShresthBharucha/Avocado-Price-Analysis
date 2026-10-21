@@ -1,152 +1,70 @@
-# 🥑 Avocado Price Analysis Using Python
+# Avocado Price Analysis Using Python
+
+**Course:** PSC (CE0525), Indus University  
+**Enrollment No.:** IU2441230585 | **Class:** 5 CSE-F  
+**GitHub:** https://github.com/ShresthBharucha/Avocado-Price-Analysis
 
 ## 1. Project Definition
-
-The **Avocado Price Analysis** project focuses on analyzing avocado prices and sales data using Python.
-
-The project will involve cleaning the dataset, performing exploratory data analysis, identifying patterns and relationships, and presenting the findings using different visualizations.
-
-The data will be checked for missing values, duplicate records, incorrect data types, and outliers before performing the analysis.
-
----
+This project analyzes weekly avocado prices and sales data using Python. The dataset is cleaned (missing values,
+duplicates, data types, outliers), explored with exploratory data analysis (EDA), visualized with graphs, and
+summarized in a short insights report.
 
 ## 2. Dataset
+- **Name:** Avocado Prices
+- **Source:** [Kaggle](https://www.kaggle.com/datasets/neuromusic/avocado-prices)
+- **Attributes:** Date, Average Price, Total Volume, PLU 4046/4225/4770, Total Bags, Small/Large/XLarge Bags, Type, Year, Region
 
-The dataset used for this project is the **Avocado Prices** dataset obtained from Kaggle.
+The dataset is used to analyze price changes over time, organic vs conventional prices, regional price differences,
+sales volume changes, and the relationship between price and volume.
 
-**Dataset Source:**
-https://www.kaggle.com/datasets/neuromusic/avocado-prices
+## 3. Visualizations
+| # | Graph | Purpose |
+|---|---|---|
+| 1 | Average Price Over Time (Line) | Trends and fluctuations in price |
+| 2 | Organic vs Conventional Price (Bar) | Compare the two types |
+| 3 | Average Price by Year (Bar) | Higher/lower price years |
+| 4 | Average Price by Region (Bar) | High/low-price regions |
+| 5 | Total Volume by Year (Line/Bar) | Volume changes over years |
+| 6 | Price vs Total Volume (Scatter) | Relationship between price and volume |
+| 7-11 | Box plots, distribution, seasonality, correlation heatmap | Outliers and extra analysis |
 
-The dataset contains weekly avocado sales information from different regions.
+All graphs are saved in `images/` after running the project.
 
-### Important Features
+## 4. Tools Used
+Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook / Google Colab, GitHub
 
-* Date
-* Average Price
-* Total Volume
-* Small Hass Avocados (4046)
-* Large Hass Avocados (4225)
-* Extra Large Hass Avocados (4770)
-* Total Bags
-* Small Bags
-* Large Bags
-* XLarge Bags
-* Type
-* Year
-* Region
+## 5. Project Structure
+```
+Avocado-Price-Analysis/
+├── data/
+│   └── avocado.csv              <- download from Kaggle and put here
+├── notebooks/
+│   └── Avocado_Price_Analysis.ipynb
+├── src/
+│   └── avocado_analysis.py      <- full pipeline as a script
+├── images/                      <- graphs (created when you run the project)
+├── reports/
+│   └── insights_report.md       <- insights report (created when you run the project)
+├── requirements.txt
+└── README.md
+```
 
----
+## 6. How to Run
+1. Download `avocado.csv` from the Kaggle link above and put it in the `data/` folder.
+2. Install the libraries:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run **either** option:
+   - **Script:** `python src/avocado_analysis.py` (saves cleaned data, all graphs and the insights report)
+   - **Notebook:** `jupyter notebook notebooks/Avocado_Price_Analysis.ipynb` (or open it in Google Colab and upload the CSV)
 
-## 3. Data Cleaning
+## 7. Key Steps
+1. **Data cleaning:** drop the index column, rename columns, fix data types, handle missing values, remove duplicates, detect outliers (IQR method).
+2. **EDA:** summaries by type and year; city-level regions are separated from aggregated regions (TotalUS, West, Northeast, etc.) so regional comparisons are fair.
+3. **Visualization:** six main graphs plus extra plots.
+4. **Insights:** findings are generated from the data into `reports/insights_report.md`.
 
-The dataset will be examined and cleaned before analysis.
-
-The following data-cleaning tasks will be performed:
-
-* Checking for missing values
-* Handling missing values if present
-* Identifying and removing duplicate records if required
-* Checking and correcting data types
-* Detecting and analyzing outliers
-* Preparing the dataset for further analysis
-
----
-
-## 4. Data Analysis and Visualization
-
-At least six visualizations will be created to understand the dataset.
-
-### Planned Visualizations
-
-1. **Average Avocado Price Over Time**
-   A line chart will be used to analyze changes in avocado prices over time.
-
-2. **Organic vs Conventional Avocado Prices**
-   A bar chart will compare the average prices of organic and conventional avocados.
-
-3. **Average Avocado Price by Year**
-   A bar chart will compare avocado prices across different years.
-
-4. **Average Price by Region**
-   A bar chart will be used to identify regions with higher and lower average avocado prices.
-
-5. **Total Avocado Volume by Year**
-   A line or bar chart will show changes in avocado sales volume over the years.
-
-6. **Average Price vs Total Volume**
-   A scatter plot will be used to investigate the relationship between avocado price and sales volume.
-
-### Additional Visualizations
-
-Additional plots such as box plots and distribution plots may also be created to support outlier detection and statistical analysis.
-
----
-
-## 5. Expected Outcomes
-
-The analysis is expected to provide useful insights into:
-
-* Changes in avocado prices over time
-* Differences between organic and conventional avocado prices
-* Regional differences in avocado prices
-* Changes in avocado sales volume
-* The relationship between avocado prices and sales volume
-* Unusual or extreme values in the dataset
-
-The final results will be summarized in a short insights report.
-
----
-
-## 6. Python Libraries and Tools
-
-The following tools and libraries will be used:
-
-### Python
-
-Main programming language for data cleaning, analysis, and visualization.
-
-### Pandas
-
-Used for loading, cleaning, manipulating, and analyzing the dataset.
-
-### NumPy
-
-Used for numerical calculations and data processing.
-
-### Matplotlib
-
-Used to create basic charts and graphs.
-
-### Seaborn
-
-Used for statistical visualizations such as box plots and distribution plots.
-
-### Jupyter Notebook / Google Colab
-
-Used as the development environment for writing and executing the Python analysis.
-
-### GitHub
-
-Used for storing the project code, documentation, visualizations, and other project files.
-
----
-
-## 7. Project Methodology
-
-The project will follow these steps:
-
-**Dataset Collection → Data Exploration → Data Cleaning → Outlier Analysis → Exploratory Data Analysis → Visualization → Insights and Conclusions**
-
----
-
-## 8. Project Status
-
-**Status:** Proposal / Initial Stage
-
-The data analysis, visualizations, and final insights will be added as the project progresses.
-
----
-
-## 9. Author
-
-**Student Project — Python Data Analysis**
+## 8. Conclusion
+This project demonstrates real-world data cleaning, exploratory data analysis, visualization and interpretation using
+Python, giving insights into avocado prices and sales patterns across years, regions and avocado types.
